@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <title>Flask app</title>
+        <style>
+        </style>
+    </head>
+    <body>
+        {% block content %}{% endblock %}
+        <form method="POST" action="{{ url_for('add_batch')}}" class="d-flex">
+            <input class="form-control me-2" placeholder="Reference" aria-label="Reference" name="ref">
+            <input class="form-control me-2" placeholder="SKU" aria-label="SKU" name="sku">
+            <input class="form-control me-2" placeholder="Quantity" aria-label="Quantity" name="qty">
+            <input class="form-control me-2" placeholder="ETA" aria-label="ETA" name="eta">
+            <button class="btn btn-outline-secondary" type="submit">Add</button>
+        </form>
+        <h2>Or Try delete some</h2>
+        <form method="POST" action="{{ url_for('allocate_endpoint')}}" class="d-flex">
+            <input class="form-control me-2" placeholder="Order ID" aria-label="Order ID" name="orderid">
+            <input class="form-control me-2" placeholder="SKU" aria-label="SKU" name="sku">
+            <input class="form-control me-2" placeholder="Quantity" aria-label="Quantity" name="qty">
+            <button class="btn btn-outline-secondary" type="submit">Allocate</button>
+        </form>
+
+    </body>
+</html>
